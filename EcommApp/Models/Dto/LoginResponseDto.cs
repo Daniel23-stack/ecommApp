@@ -1,6 +1,6 @@
 ﻿namespace EcommApp.Models.Dto;
 
-public class LoginResponceDto
+public class LoginResponseDto
 {
     public string Email { get; set; }
     public string Token { get; set; }
