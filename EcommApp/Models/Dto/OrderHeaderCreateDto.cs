@@ -1,12 +1,26 @@
-﻿namespace EcommApp.Models.Dto;
+﻿using Microsoft.Build.Framework;
+
+namespace EcommApp.Models.Dto;
 
 public class OrderHeaderCreateDto
 {
-    public int OrderHeaderId { get; set; }
-    public string PickupName { get; set; }
-    public string PickupPhoneNumber { get; set; }
-    public string PickupEmail { get; set; }
+    public class OrderHeaderCreateDTO
+    {
+        [Required]
+        public string PickupName { get; set; }
+        [Required]
+        public string PickupPhoneNumber { get; set; }
+        [Required]
+        public string PickupEmail { get; set; }
 
-    public string StripePaymentIntentID { get; set; }
-    public string Status { get; set; }
+        public string ApplicationUserId { get; set; }
+        public double OrderTotal { get; set; }
+
+
+        public string StripePaymentIntentID { get; set; }
+        public string Status { get; set; }
+        public int TotalItems { get; set; }
+
+        public IEnumerable<OrderDetailsCreateDto> OrderDetailsDTO { get; set; }
+    }
 }
